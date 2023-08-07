@@ -15,8 +15,8 @@ Mas arrow function é mais legal 😁
 Crie uma função que recebe dois parâmetros e retorna o resultado 
 da multiplicação deles.
 */
-
-
+const somar = (val1, val2) => val1 * val2;
+console.log(somar(23, 12));
 
 /*
 02
@@ -32,7 +32,8 @@ os números do objeto.
 A invocação da função deve retornar 21.
 */
 
-
+const obj = {num1 : 7, num2 : 3};
+console.log(somar(obj.num1, obj.num2));
 
 /*
 03
@@ -47,7 +48,8 @@ argumentos os números do array.
 A invocação da função deve retornar 35.
 */
 
-
+const arr = [5, 7];
+console.log(somar(arr[0], arr[1]));
 
 /*
 04
@@ -65,7 +67,8 @@ A invocação da função que você criou no exercício 01 deve
 retornar 27.
 */
 
-
+const pegaNumerosImpares = () => [5,3,9];
+console.log(somar(pegaNumerosImpares()[1], pegaNumerosImpares()[2]));
 
 /*
 05
@@ -89,7 +92,11 @@ A invocação da função que você criou no exercício 01 deve
 retornar 12.
 */
 
+function pegaObj() {
+  return [{numero: 2}, {numero: 4}, {numero: 6}];
+}
 
+console.log(pegaObj()[1].numero, pegaObj()[2].numero);
 
 /*
 06
@@ -98,7 +105,7 @@ Crie uma função pegaRespostasUsuario que retorna um array com os
 itens 'A', 'B', 'A' e 'D'.
 */
 
-
+const pegaRespostasUsuario = () => ["A", "B", "A", "D"];
 
 /*
 07
@@ -124,7 +131,20 @@ Senão, atribua a pontuacao o valor que ela tem somado a 100.
 Na última linha dentro do bloco da função, retorne pontuacao.
 */
 
+const pegaPontuacao = (respostasUsuario) => {
+  const userLastItem = respostasUsuario;
+  let pontuacao = 0;
 
+  if (userLastItem === "A") {
+    pontuacao += 50;
+  } else if (userLastItem === "C") {
+    pontuacao += 25;
+  } else {
+    pontuacao += 100;
+  }
+
+  return pontuacao;
+}
 
 /*
 08
@@ -137,7 +157,7 @@ Invoque pegaPontuacao e passe respostasUsuario como argumento.
 A invocação de pegaPontuacao deve retornar 100.
 */
 
-
+const respostasUsuario = pegaPontuacao(pegaRespostasUsuario()[pegaRespostasUsuario().length-1]);
 
 /*
 09
@@ -154,3 +174,16 @@ else if ou else.
 O único requisito para você usar return é ele estar dentro de uma 
 função.
 */
+
+const pegaPontuacao = (respostasUsuario) => {
+  const userLastItem = respostasUsuario;
+  // let pontuacao = 0;
+
+  if (userLastItem === "A") {
+    return 50;
+  } else if (userLastItem === "C") {
+    return 25;
+  } else {
+    return 100;
+  }
+}
